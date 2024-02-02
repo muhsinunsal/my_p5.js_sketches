@@ -2,7 +2,6 @@ import p5, { Vector } from "p5";
 
 const rain = (p: p5) => {
 	const canvasSize = new Vector(100, 200);
-	const canvasCenter = p5.Vector.div(canvasSize, 2) as unknown as Vector;
 	class RainDrop {
 		constructor(public pos: Vector, public size: Vector, public ySpeed: number) {
 			this.pos = new Vector(p.random(0, canvasSize.x), p.random(-1 * canvasSize.y, canvasSize.y), p.random(2));
