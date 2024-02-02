@@ -1,10 +1,65 @@
+@use "styles/predefineds"
+@import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Marchen:700|Noto%20Sans%20Marchen:400')
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto+Mono:wght@100;500&display=swap')
 :root
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
   line-height: 1.5
   font-weight: 400
 
   color: rgba(255, 255, 255, 0.87)
   background-color: #242424
 
-h1
-  text-align: center
+html,body
+  margin: 0
+  padding: 0
+
+.container
+  max-width: 80%
+  margin: 0 auto
+
+.nav
+  position: fixed
+  width: 80%
+  left: 50%
+  transform: translateX(-50%)
+  .container
+    background: #ccc
+    border-radius: 0px 0px 3rem 3rem
+    padding: 1rem 2rem
+    color: black
+    align-items: baseline
+    display: flex
+    justify-content: space-between
+
+  a
+    text-decoration: none
+    color: inherit
+    transition: color 150ms
+    &:hover
+      color: #fff
+  svg
+    margin-left: 0.25rem
+
+nav
+  display: flex
+  flex-direction: column
+  position: fixed
+  left: 1rem
+  top: 50%
+  transform: translateY(-50%)
+  font-size: 3rem
+  border: 1px solid #515151
+  padding: 1rem
+  background-color: rgba(51,51,51,0.2)
+  border-radius: 2rem
+
+footer
+  position: absolute
+  bottom: 0
+  width: 100%
+  background: #ccc
+  color: black
+
+#defaultCanvas0
+  height: 100vh !important
+  width: 100vw !important
+  touch-action: none
