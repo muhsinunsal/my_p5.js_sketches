@@ -198,8 +198,8 @@ const rayTrace: Sketch = (p: p5) => {
 
 	p.preload = () => {
 		// Creates a p5.Font object.
-		font = p.loadFont(fontFile);
-		// font = p.loadFont("../../" + fontFile);
+		//font = p.loadFont(fontFile);
+		font = p.loadFont("../../" + fontFile);
 	};
 	let points: Vector[];
 	p.setup = () => {
