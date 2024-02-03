@@ -7,8 +7,8 @@ function Header() {
 			<div className="nav">
 				<div className="container">
 					<Link to={"/"}>my_p5.js_sketches</Link>
-					<span>
-						<Link to={"https://github.com/muhsinunsal/my_p5.js_sketches"}>
+					<span >
+						<Link style={{textWrap: "nowrap"}} to={"https://github.com/muhsinunsal/my_p5.js_sketches"}>
 							muhsinunsal
 							<FaGithub />
 						</Link>

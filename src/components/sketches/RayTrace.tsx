@@ -1,6 +1,6 @@
 import { Sketch } from "@p5-wrapper/react";
 import p5, { Font, Vector } from "p5";
-import fontFile from "../../assets/Roboto-ThinItalic.ttf"
+import fontFile from "../../assets/Roboto-ThinItalic.ttf";
 
 const rayTrace: Sketch = (p: p5) => {
 	const canvasSize = new Vector(0, 500);
@@ -15,8 +15,8 @@ const rayTrace: Sketch = (p: p5) => {
 			this.b = p.createVector(x2, y2);
 		}
 		show() {
-			p.noStroke();
-			// p.stroke(255)
+			//p.noStroke();
+			p.stroke(255, 255, 255, 20);
 			p.line(this.a.x, this.a.y, this.b.x, this.b.y);
 		}
 	}
@@ -198,7 +198,8 @@ const rayTrace: Sketch = (p: p5) => {
 
 	p.preload = () => {
 		// Creates a p5.Font object.
-		font = p.loadFont("../../"+fontFile);
+		font = p.loadFont(fontFile);
+		// font = p.loadFont("../../" + fontFile);
 	};
 	let points: Vector[];
 	p.setup = () => {
@@ -266,7 +267,7 @@ const rayTrace: Sketch = (p: p5) => {
 		prevParticle.update(x1, y1);
 		prevParticle.show();
 		prevParticle.look(walls);
-		/*
+
 		const [x2, y2] = drawEllipsePoints(
 			canvasCenter.x,
 			canvasCenter.y,
@@ -278,10 +279,9 @@ const rayTrace: Sketch = (p: p5) => {
 		prevParticle.update(x2, y2);
 		prevParticle.show();
 		prevParticle.look(walls);
-			*/
+
 		if (p.mouseIsPressed) {
 			if (p.mouseX < canvasSize.x && p.mouseY < canvasSize.y) {
-				
 				particle.update(p.mouseX, p.mouseY);
 				particle.show();
 				particle.look(walls);
