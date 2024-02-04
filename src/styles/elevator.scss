@@ -1,0 +1,111 @@
+@use "colors" as *;
+
+.elevator {
+	margin: 0 auto;
+	outline: 1px solid $color-shadow;
+	list-style: none;
+	padding: 2rem 3rem;
+	border-radius: 5px;
+	user-select: none;
+
+	li {
+		padding-bottom: 0.1rem;
+		margin: 0.5rem;
+		.elevator-floor:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			width: 0;
+			background: $color-text-white;
+
+			transition: width 0.3s ease 0s, left 0.3s ease 0s;
+		}
+
+		&:hover .elevator-floor:after {
+			width: 100%;
+			left: 0;
+		}
+		&:hover .elevator-btn-btn {
+			background: $color-text-white;
+			color: $color-text-black;
+		}
+
+		a {
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			&.active .elevator-btn-btn {
+				background: $color-text-white;
+				color: $color-text-black;
+			}
+			&.active .elevator-floor:after {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+	&-bot-btns {
+		display: flex;
+		margin-top: 2rem;
+		justify-content: space-between;
+	}
+	&-btn {
+		display: flex;
+		background: $color-shadow;
+		margin-right: 1rem;
+
+		justify-content: center;
+		align-items: center;
+		border-radius: 20px;
+		&.green {
+			border: 2px solid green;
+			background: r;
+		}
+	}
+	&-btn-label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		color: $color-text-white;
+		margin-left: 5px;
+		border-radius: 50%;
+
+		width: 2rem;
+		height: 2rem;
+	}
+	&-btn-btn {
+		display: inline-block;
+		background: #c0c0c0a6;
+		color: $color-text-black;
+		border-radius: 50%;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #000;
+		transition: all 0.3s;
+		&:hover {
+			background: $color-text-white;
+			color: $color-text-black;
+		}
+		&.yellow {
+			background: #fada5e;
+		}
+	}
+	&-floor {
+		position: relative;
+		color: $color-text-white;
+		text-wrap: nowrap;
+		letter-spacing: 3px;
+	}
+
+	&-keyhole {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+}

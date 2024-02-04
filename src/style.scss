@@ -1,0 +1,83 @@
+@use "styles/colors" as *;
+@use "styles/predefineds";
+@use "styles/nav";
+@use "styles/elevator";
+@import url("https://fonts.googleapis.com/css?family=Noto%20Sans%20Marchen:700|Noto%20Sans%20Marchen:400");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto+Mono:wght@100;500&display=swap");
+
+:root {
+	line-height: 1.5;
+	font-weight: 400;
+
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	left: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 3rem;
+	border: 1px solid #515151;
+	padding: 1rem;
+	background-color: rgba(51, 51, 51, 0.2);
+	border-radius: 2rem;
+}
+
+.section {
+	position: relative;
+	height: 100vh;
+	scroll-snap-align: start;
+
+	&:not(:first-child) > :first-child {
+		margin-top: 5vh !important;
+	}
+}
+main {
+	scroll-snap-stop: always;
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+	overflow-y: scroll;
+}
+.main {
+	display: flex;
+	color: $color-text-white;
+	flex-direction: column;
+	& > .section {
+		scroll-snap-align: start;
+	}
+
+	::selection {
+		color: black;
+		background: $color-text-white;
+	}
+
+	&-p {
+		margin: 2rem 0;
+	}
+}
+
+hr {
+	border: 1px solid $color-shadow;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #ccc;
+	color: black;
+}

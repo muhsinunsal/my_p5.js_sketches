@@ -1,4 +1,4 @@
-import "./style.sass";
+import "./style.scss";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import HomePage from "./components/pages/HomePage";

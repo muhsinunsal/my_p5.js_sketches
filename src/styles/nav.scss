@@ -1,0 +1,30 @@
+.nav {
+	position: fixed;
+	min-width: 95%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+	user-select: none;
+
+	.container {
+		background: #ccc;
+		border-radius: 0px 0px 3rem 3rem;
+		padding: 1rem 2rem;
+		color: black;
+		align-items: baseline;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		transition: color 150ms;
+		&:hover {
+			color: #fff;
+		}
+	}
+	svg {
+		margin-left: 0.25rem;
+	}
+}

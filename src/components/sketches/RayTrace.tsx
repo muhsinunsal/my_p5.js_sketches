@@ -3,7 +3,7 @@ import p5, { Font, Vector } from "p5";
 import fontFile from "../../assets/Roboto-ThinItalic.ttf";
 
 const rayTrace: Sketch = (p: p5) => {
-	const canvasSize = new Vector(0, 500);
+	const canvasSize = new Vector(window.innerWidth, window.innerHeight);
 	const canvasCenter = p5.Vector.div(canvasSize, 2) as unknown as Vector;
 	const isMobile = window.innerHeight > window.innerWidth;
 
@@ -198,28 +198,12 @@ const rayTrace: Sketch = (p: p5) => {
 
 	p.preload = () => {
 		// Creates a p5.Font object.
-		//font = p.loadFont(fontFile);
-		font = p.loadFont("../../" + fontFile);
+		font = p.loadFont(fontFile);
+		//font = p.loadFont("../../" + fontFile);
 	};
 	let points: Vector[];
 	p.setup = () => {
-		const canvas = p.createCanvas(canvasSize.x, canvasSize.y);
-		const canvasParent = canvas.parent() as unknown as HTMLDivElement;
-		let w;
-		let h;
-		if (canvas.id() === "defaultCanvas0") {
-			w = window.innerWidth - 15;
-			h = window.innerHeight;
-		} else {
-			const canvasParentDim = canvasParent.getBoundingClientRect();
-			w = canvasParentDim.width;
-			h = canvasParentDim.height;
-		}
-		p.resizeCanvas(w, h);
-		canvasSize.x = w;
-		canvasSize.y = h;
-		canvasCenter.x = canvasSize.x / 2;
-		canvasCenter.y = canvasSize.y / 2;
+		p.createCanvas(canvasSize.x, canvasSize.y);
 
 		if (isMobile) {
 			particle = new Particle(3);
