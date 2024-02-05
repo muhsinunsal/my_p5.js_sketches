@@ -1,0 +1,29 @@
+@use "./colors" as *;
+.side-btns {
+	position: absolute;
+	right: 1vw;
+	top: 50%;
+	transform: translateY(-50%);
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+
+	&-btn {
+		&.sub-btn {
+			background-color: $color-background;
+			color: $color-text-white;
+			border-radius: 5px;
+			&:hover {
+				color: $color-shadow;
+				background-color: $color-text-white;
+			}
+		}
+		&.main-btn {
+			color: $color-background;
+			&:hover {
+				color: $color-text-white;
+			}
+		}
+	}
+}

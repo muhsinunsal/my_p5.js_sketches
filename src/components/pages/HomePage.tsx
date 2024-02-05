@@ -8,10 +8,22 @@ import { PiKeyhole } from "react-icons/pi";
 import VariableCanvas from "./VariableCanvas";
 import { ReactP5Wrapper } from "@p5-wrapper/react";
 import canvasArr from "./Canvases";
+import { CgPushDown } from "react-icons/cg";
 
 const HomePage: React.FC = () => {
 	const [activeCanvas, setActiveCanvas] = useState<string>("Ground");
 	const canvasRef = useRef(null);
+	const handleScrollDown = () => {
+		const canvasSection = document.querySelector(".content")!;
+		canvasSection.scrollIntoView({ behavior: "smooth" });
+	};
+	console.log(Location);
+	const renderDownBtn = () =>{
+		if(activeCanvas!= "Ground"){
+			return <CgPushDown size={"2rem"} onClick={handleScrollDown} className="canvas-btn" />;
+		}
+
+	}
 
 	return (
 		<>
@@ -72,9 +84,10 @@ const HomePage: React.FC = () => {
 						</span>
 					</div>
 				</ul>
+				{renderDownBtn()}
 			</div>
 			<div ref={canvasRef}>
-				<VariableCanvas  sketchName={activeCanvas} />
+				<VariableCanvas sketchName={activeCanvas} />
 			</div>
 		</>
 	);
