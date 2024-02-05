@@ -7,9 +7,9 @@ import { BiCollapseHorizontal, BiExpandHorizontal, BiBell } from "react-icons/bi
 import { PiKeyhole } from "react-icons/pi";
 import VariableCanvas from "./VariableCanvas";
 import { ReactP5Wrapper } from "@p5-wrapper/react";
+import canvasArr from "./Canvases";
 
 const HomePage: React.FC = () => {
-	const canvases = ["rain", "rayTrace"];
 	const [activeCanvas, setActiveCanvas] = useState<string>("Ground");
 	const canvasRef = useRef(null);
 
@@ -37,15 +37,15 @@ const HomePage: React.FC = () => {
 					<div className="elevator-keyhole">
 						<PiKeyhole size={"1.5rem"} />
 					</div>
-					{canvases.reverse().map((name, index) => {
+					{canvasArr.reverse().map((canvas, index) => {
 						return (
-							<li key={canvases.length - index}>
-								<NavLink to={`${name}`} onClick={() => setActiveCanvas(name)}>
+							<li key={canvasArr.length - index}>
+								<NavLink to={`${canvas.name}`} onClick={() => setActiveCanvas(canvas.name)}>
 									<span className="elevator-btn">
-										<span className="elevator-btn-label">{canvases.length - index}</span>
+										<span className="elevator-btn-label">{canvasArr.length - index}</span>
 										<span className="elevator-btn-btn"></span>
 									</span>
-									<span className="elevator-floor">{name}</span>
+									<span className="elevator-floor">{canvas.name}</span>
 								</NavLink>
 							</li>
 						);

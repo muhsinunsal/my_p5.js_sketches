@@ -1,6 +1,6 @@
 import p5, { Vector } from "p5";
 
-const rain = (p: p5) => {
+const snow = (p: p5) => {
 	const canvasSize = new Vector(window.innerWidth,window.innerHeight);
 	class RainDrop {
 		constructor(public pos: Vector, public size: Vector, public ySpeed: number) {
@@ -48,4 +48,4 @@ const rain = (p: p5) => {
 		});
 	};
 };
-export default rain;
+export default snow;
