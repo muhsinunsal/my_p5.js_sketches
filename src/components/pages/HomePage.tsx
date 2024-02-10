@@ -49,7 +49,9 @@ const HomePage: React.FC = () => {
 					<div className="elevator-keyhole">
 						<PiKeyhole size={"1.5rem"} />
 					</div>
-					{canvasArr.reverse().map((canvas, index) => {
+					{
+					
+					canvasArr.map((canvas, index) => {
 						return (
 							<li key={canvasArr.length - index}>
 								<NavLink to={`${canvas.name}`} onClick={() => setActiveCanvas(canvas.name)}>
