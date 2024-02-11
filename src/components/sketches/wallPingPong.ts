@@ -52,6 +52,7 @@ const wallPoingPongg = (p: p5) => {
 				this.pos.x + this.radius / 2 >= boardCenter.x + boardDim.x / 2
 			) {
 				this.velocity.x *= -1;
+				this.velocity.y *= p.random(0.8,1.5)
 			}
 			if (
 				this.pos.y - this.radius / 2 <= boardCenter.y - boardDim.y / 2 ||
