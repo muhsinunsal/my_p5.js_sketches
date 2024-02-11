@@ -94,6 +94,10 @@
 		}
 		&.yellow {
 			background: #fada5e;
+			&:hover{
+				background: #ffeea9;
+
+			}
 		}
 	}
 	&-floor {

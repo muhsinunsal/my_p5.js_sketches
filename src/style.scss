@@ -41,7 +41,7 @@ nav {
 
 .section {
 	position: relative;
-	height: 100vh !important;
+	height: 100vh ;
 	scroll-snap-align: start;
 
 	&:not(:first-child) > :first-child {
@@ -95,5 +95,11 @@ footer {
 	&:hover{
 		background-color: $color-text-white;
 		color: $color-shadow;
+	}
+}
+@media screen  and (max-width: 480px)  {
+	.main.section{
+		justify-content: space-around
+
 	}
 }
